@@ -6,6 +6,7 @@
 #include <string.h>
 #include <pthread.h>
 #include "complexnumber.h"
+#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
 // make gcc shut up about usleep implicit declaration
