@@ -3,3 +3,4 @@ mandelbrot
 .vscode/
 tags
 screenshot*.png
+tmux.sh

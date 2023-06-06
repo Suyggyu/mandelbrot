@@ -20,10 +20,10 @@ int stability_complex_number(complex_number c, int max_iterations) {
     complex_number z = {0.0, 0.0};
 
     for (; iterations < max_iterations && absolute_of_complex_number(z) < NO_RETURN_RADIUS; iterations++) {
+        square_complex_number(&z);
+
         z.real += c.real;
         z.imag += c.imag;
-
-        square_complex_number(&z);
     }
     return iterations;
 }

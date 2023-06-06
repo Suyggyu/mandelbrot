@@ -5,6 +5,11 @@ ldlibs="-lm -lncurses -pthread"
 opts="-DNTHREADS=6"
 cc="gcc"
 
+if [ "$1" = "clean" ]; then
+	rm "$bin" *.png
+	exit
+fi
+
 [ -z "$1" ] && opts="$opts -g"
 [ "$1" = "release" ] && opts="$opts -O2"
 [ "$1" = "benchmark" ] && opts="$opts -DBENCHMARK -O2"
@@ -17,8 +22,7 @@ compile_status=$?
 
 set +x
 
-if [ "$1" = "release" ] || [ "$1" = "static" ]
-then
+if [ "$1" = "release" ] || [ "$1" = "static" ]; then
 	strip ./$bin
 fi
 
